@@ -1,0 +1,14 @@
+<h1>Animales</h1>
+<hr>
+<div class="container-card">
+    <div class="card-columns">
+        <div class="card animated fadeIn fast" *ngFor="let animal of animalesArray; let i = index">
+            <img [src]="animal.img" class="card-img-top" [alt]="animal.nombre">
+            <div class="card-body">
+                <h5 class="card-title">{{ animal.nombre }}</h5>
+                <p class="card-text">{{ animal.descripcion }}</p>
+                <a [routerLink]="['/animal', i]" class="btn btn-outline-primary">Ver detalle</a>
+            </div>
+        </div>
+    </div>
+</div>

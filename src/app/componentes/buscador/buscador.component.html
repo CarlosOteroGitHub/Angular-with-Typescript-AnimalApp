@@ -1,0 +1,19 @@
+<h1>Buscando: <small>{{ texto }}</small></h1>
+<hr>
+<div class="row animated fadeIn fast" *ngIf="animalesArray.length == 0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No existen resultados con el termino: {{ texto }}
+        </div>
+    </div>
+</div>
+<div class="card-columns">
+    <div class="card animated fadeIn fast" *ngFor="let animal of animalesArray">
+        <img [src]="animal.img" class="card-img-top" [alt]="animal.nombre">
+        <div class="card-body">
+            <h5 class="card-title">{{ animal.nombre }}</h5>
+            <p class="card-text">{{ animal.descripcion }}</p>
+            <a [routerLink]="['/animal', animal.index]" class="btn btn-outline-primary">Ver detalle</a>
+        </div>
+    </div>
+</div>
